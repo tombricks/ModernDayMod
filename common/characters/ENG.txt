@@ -1,0 +1,61 @@
+characters = {
+	ENG_keir_starmer = {
+		name = "Keir Starmer"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ENG_keir_starmer
+			}
+			army = {
+				small = GFX_idea_ENG_keir_starmer
+			}
+		}
+	}
+	ENG_liberal_democrats = {
+		name = ENG_liberal_democrats
+	}
+	ENG_labour_party = {
+		name = ENG_labour_party
+	}
+	ENG_democratic_unionist_party = {
+		name = ENG_democratic_unionist_party
+	}
+	ENG_conservative_party = {
+		name = ENG_conservative_party
+	}
+	ENG_reform_uk = {
+		name = ENG_reform_uk
+	}
+	ENG_scottish_national_party = {
+		name = ENG_scottish_national_party
+	}
+	ENG_plaid_cymru = {
+		name = ENG_plaid_cymru
+	}
+	ENG_independent_alliance = {
+		name = ENG_independent_alliance
+	}
+	ENG_alliance_party = {
+		name = ENG_alliance_party
+	}
+	ENG_green_party = {
+		name = ENG_green_party
+	}
+	ENG_ulster_unionist_party = {
+		name = ENG_ulster_unionist_party
+	}
+	ENG_social_democratic_and_labour_party = {
+		name = ENG_social_democratic_and_labour_party
+	}
+	ENG_speaker = {
+		name = ENG_speaker
+	}
+	ENG_traditional_unionist_voice = {
+		name = ENG_traditional_unionist_voice
+	}
+	ENG_independents = {
+		name = ENG_independents
+	}
+	ENG_sinn_fein = {
+		name = ENG_sinn_fein
+	}
+}

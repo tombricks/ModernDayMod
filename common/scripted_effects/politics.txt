@@ -1,0 +1,28 @@
+lower_house_calculate = {
+	set_variable = { lower_house_seats = 0 }
+	clear_array = lower_house_parties
+	for_each_loop = {
+		array = political_parties
+		value = party
+		add_to_variable = { lower_house_seats = lower_house_seats_@var:party }
+		set_variable = { party.lower_house_seats_@THIS = lower_house_seats_@var:party }
+		if = {
+			limit = {
+				check_variable = {
+					lower_house_seats_@var:party > 0
+				}
+			}
+			add_to_array = { lower_house_parties = party }
+		}
+		else = {
+			set_variable = { lower_house_percentage_@var:party = 0 }
+		}
+	}
+
+	for_each_loop = {
+		array = lower_house_parties
+		value = party
+		set_variable = { lower_house_percentage_@var:party = lower_house_seats_@var:party }
+		divide_variable = { lower_house_percentage_@var:party = lower_house_seats }
+	}
+}

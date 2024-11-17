@@ -1,0 +1,9 @@
+char_types = {
+    schema = {
+        any_key = yes
+        data = int
+    }
+
+	person = 1
+	political_party = 2
+}
