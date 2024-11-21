@@ -1,0 +1,114 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_ENG_keir_starmer"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_keir_starmer.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_angela_rayner"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_angela_rayner.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_charles_iii"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_charles_iii.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_yvette_cooper"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_yvette_cooper.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_rachel_reeves"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_rachel_reeves.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_kemi_badenoch"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_kemi_badenoch.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_ed_miliband"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_ed_miliband.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_david_lammy"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_david_lammy.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_pat_mcfadden"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_pat_mcfadden.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_shabana_mahmood"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_shabana_mahmood.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_wes_streeting"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_wes_streeting.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_jonathan_reynolds"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_jonathan_reynolds.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_liz_kendall"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_liz_kendall.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_john_healey"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_john_healey.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_louise_haigh"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_louise_haigh.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_peter_kyle"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_peter_kyle.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_hilary_benn"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_hilary_benn.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_ian_murray"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_ian_murray.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_bridget_phillipson"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_bridget_phillipson.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_lisa_nandy"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_lisa_nandy.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_angela_evans_smith"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_angela_evans_smith.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_lucy_powell"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_lucy_powell.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_jo_stevens"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_jo_stevens.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_steve_reed"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_steve_reed.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_alan_campbell"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_alan_campbell.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_darren_jones"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_darren_jones.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_richard_hermer"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_richard_hermer.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_ENG_anneliese_dodds"
+		texturefile = "gfx/leaders/ENG/portrait_ENG_anneliese_dodds.dds"
+	}
+}

@@ -39,7 +39,7 @@ guiTypes = {
 		iconType ={
 			name ="pol_view_bg"
 			spriteType = "GFX_pol_view_bg"
-			position = { x= 0 y = 44 }
+			position = { x= 0 y = -4400 }
 			Orientation = "UPPER_LEFT"
 		}	
 
@@ -62,13 +62,13 @@ guiTypes = {
 #				spriteType ="GFX_pol_piechart_bg"
 #			}
 			
-			#gridBoxType = {
-			#	name = "parties_grid"
-			#	position = { x = -2600 y = 184 }
-			#	size = { width = 100%% height = 100%% }
-			#	slotsize = { width = 230 height = 16 }
-			#	format = "UPPER_LEFT"
-			#}
+			gridBoxType = {
+				name = "parties_grid"
+				position = { x = -2600 y = 184 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 230 height = 16 }
+				format = "UPPER_LEFT"
+			}
 		}
 
 		
@@ -463,7 +463,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 0 y = 425 }
+			position = { x = 0 y = 925 }
 			size = { width=100%% height=100%% }
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 40
@@ -512,7 +512,7 @@ guiTypes = {
 		iconType ={
 			name ="politics_bottom"
 			spriteType = "GFX_main_screens_bottom"
-			position = { x = -2 y = 383 }
+			position = { x = -2 y = 883 }
 			Orientation = "UPPER_LEFT"
 			scale = 1.02
 		}
@@ -525,7 +525,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "manage_occupied_button"
-			position = { x = 10 y = 390 }
+			position = { x = 10 y = 890 }
 			quadTextureSprite = "GFX_government_button"
 			buttonFont = "hoi_16mbs"
 			Orientation = "UPPER_LEFT"
@@ -533,7 +533,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "manage_occupied_button_text"
-			position = { x = 48 y = 398 }
+			position = { x = 48 y = 898 }
 			font = "hoi_16mbs"
 			text = "MANAGE_OCCUPIED_TERRITORIES"
 			maxWidth = 122
@@ -542,7 +542,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "subjects_button_container"
-			position = { x = 367 y = 390 }
+			position = { x = 367 y = 890 }
 
 			buttonType = {
 				name = "show_subjects_button"
@@ -573,7 +573,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "show_exiles_collaborations_button"
-			position = { x = 190 y = 390 }
+			position = { x = 190 y = 890 }
 			quadTextureSprite = "GFX_government_button"
 			buttonFont = "hoi_16mbs"
 			Orientation = "UPPER_LEFT"
@@ -582,7 +582,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "manage_exiled_collaborations_governments"
-			position = { x = 223 y = 398 }
+			position = { x = 223 y = 898 }
 			font = "hoi_16mbs"
 			maxWidth = 130
 			maxHeight = 20
@@ -595,20 +595,20 @@ guiTypes = {
 		iconType = {
 			name = "icon_exiled_collaborations_governments"
 			spriteType = "GFX_icon_exiled_governments"
-			position = { x = 192 y = 391 }
+			position = { x = 192 y = 891 }
 		}
 
 		iconType = {
 			name = "icon_occupied_territories"
 			spriteType = "GFX_icon_occupied_territories"
-			position = { x = 12 y = 391 }
+			position = { x = 12 y = 891 }
 		}
 	}
 	
 	containerWindowType = {
 		name = "country_politics_idea_category_entry"
 		position = { x = 0 y = 0 }
-		size = { width=550 height= 100 }
+		size = { width=550 height= 600 }
 		clipping = no
 		
 		iconType ={

@@ -1,0 +1,34 @@
+char_has_party = {
+	NOT = { check_variable = { party = 0 } }
+}
+has_positions = {
+	var:temp_char = {
+		check_variable = { government_positions_@PREV^num > 0 }
+	}
+}
+has_government_leading_party = {
+	NOT = { check_variable = { government_leading_party = 0 } }
+}
+has_government_paramount_leader = {
+	NOT = { check_variable = { government_paramount_leader = 0 } }
+}
+has_government_head_of_state = {
+	NOT = { check_variable = { government_head_of_state = 0 } }
+}
+has_government_head_of_government = {
+	NOT = { check_variable = { government_head_of_government = 0 } }
+}
+has_government_constitution_structure = {
+	NOT = { check_variable = { government_constitution_structure = 0 } }
+}
+has_government_constitution_power = {
+	NOT = { check_variable = { government_constitution_power = 0 } }
+}
+has_government_constitution_type = {
+	NOT = { check_variable = { government_constitution_type = 0 } }
+}
+char_has_positions = {
+	OWNER = {
+		has_positions = yes
+	}
+}

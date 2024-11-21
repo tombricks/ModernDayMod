@@ -1,0 +1,593 @@
+guiTypes = {
+	containerWindowType = {
+		name = "politics_tab_window"
+		size = { width = 100%% height = 100%% }
+        #position = { x = 10000 }
+
+		containerWindowType = {
+			name = "political_parties_grid_container"
+			position = { x = 338 y = 300 }
+			size = { width = 200 height = 74 }
+			verticalScrollbar = "right_vertical_slider"
+			clipping = yes
+			
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+
+			gridBoxType = {
+				name = "political_parties_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 230 height = 16 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		
+		containerWindowType = {
+			name = "new_box"
+			position = { x = -1 y = 43 }
+			size = { width = 100%% height = 646 }
+			
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_window"
+			}
+
+            gridBoxType = {
+				name = "leaders_grid"
+				position = { x = 13 y = 13 }
+				size = { width = 350 height = 288 }
+				slotsize = { width = 175 height = 288 }
+				max_slots_horizontal = 2
+				max_slots_vertical = 1
+				format = "UPPER_LEFT"
+            }
+
+			containerWindowType = {
+				name = "new_government_box"
+				position = { x = 363 y = 15 }
+				size = { width = 169 height = 286 }
+			
+				background = {
+					name = "Background"		
+					quadTextureSprite ="GFX_tiled_window_1b_thin_border"
+				}
+
+                buttonType ={
+                    name ="government_button"
+                    spriteType = "GFX_sort_button_focus_171x35"
+                    position = { x= 0 y = 0 }
+                    Orientation = "UPPER_LEFT"
+					buttonFont = "hoi_18mbs"
+					buttonText = "Government"
+                }
+
+                containerWindowType = {
+                    name = "government_grid_box"
+                    position = { x = 4 y = 30 }
+                    size = { width = 165 height = 248 }
+			        verticalScrollbar = "right_vertical_slider"
+			
+                    background = {
+                        name = "Background"		
+                        quadTextureSprite ="GFX_tiled_window_transparent"
+                    }
+
+                    gridBoxType = {
+                        name = "government_grid"
+                        position = { x = 4 y = 0 }
+                        size = { width = 140 height = 100%% }
+                        slotsize = { width = 68 height = 70 }
+                        max_slots_horizontal = 2
+                        format = "UPPER_LEFT"
+                    }
+                }
+			}
+
+            containerWindowType = {
+                name = "pol_view_bg_government"
+                position = { x = 16 y = 300 }
+
+                iconType = {
+                    name = "bg"
+                    spriteType = "GFX_pol_view_bg_government"
+                }
+
+                iconType ={
+                    name ="pol_faction_icon"
+                    spriteType = "GFX_pol_factions_strip"
+                    position = { x= 39 y = 40 }
+                    Orientation = "UPPER_LEFT"
+                    centerposition = yes
+                }
+
+                instantTextboxType = {
+                    name = "governing_party"
+                    position = { x = 88 y = 3 }
+                    font = "hoi_18mbs"
+                    text = governing_party_text
+					maxWidth = 240
+                    maxHeight = 38
+                    vertical_alignment = center
+                }
+
+                instantTextboxType = {
+                    name = "governing_coalition"
+                    position = { x = 88 y = 40 }
+                    font = "hoi_16mbs"
+                    text = governing_coalition_text
+					maxWidth = 240
+                    maxHeight = 38
+                    vertical_alignment = top
+                }
+            }
+		}
+	}
+			
+    containerWindowType = {
+        name = "cabinet_box"
+        position = { x = 0 y = 0 }
+        size = { width = 68 height = 70 }
+
+        background = {
+            name = "Background"		
+            quadTextureSprite ="GFX_tiled_window_transparent"
+        }
+
+		iconType ={
+			name ="cabinet_portrait"
+			spriteType = "GFX_leader_unknown"
+			position = { x=0 y=0 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.29
+			centerposition = yes
+            orientation = center
+			pdx_tooltip = cabinet_tt
+			pdx_tooltip_delayed = cabinet_portrait_tt
+		}
+
+		buttonType ={
+			name ="cabinet_portrait_button"
+			spriteType = "GFX_leader_unknown"
+			position = { x=0 y=0 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.29
+			centerposition = yes
+            orientation = center
+			pdx_tooltip = cabinet_tt
+			pdx_tooltip_delayed = cabinet_portrait_button_tt
+		}
+
+		iconType = {
+			name = "diplo_leader_frame"
+			position = { x=0 y=0 }
+			spriteType = "GFX_diplo_leader_frame"
+			alwaystransparent = yes
+			centerposition = yes
+            orientation = center
+			scale = 0.38
+		}
+    }
+			
+    containerWindowType = {
+        name = "leader_box"
+        position = { x = 0 y = 0 }
+        size = { width = 175 height = 288 }
+
+        iconType = {
+            name = "leader_portrait"
+            position = { x = 87 y = 144 }
+            quadTextureSprite = "GFX_leader_unknown"
+            centerposition = yes
+        }
+
+        iconType = {
+            name = "leader_frame"
+            position = { x = 87 y = 144 }
+            quadTextureSprite = "GFX_leader_title_frame"
+            centerposition = yes
+            alwaystransparent = yes
+        }
+
+        instantTextboxType = {
+            name = "leader_title"
+            position = { x = 0 y = 2 }
+            font = "hoi_16mbs"
+            text = "[GetPositionTitle]"
+            maxWidth = 175
+            maxHeight = 36
+            format = center
+            vertical_alignment = center
+        }
+
+        instantTextboxType = {
+            name = "leader_name"
+            position = { x = 0 y = 248 }
+            font = "hoi_18mbs"
+            text = "[?temp_char.GetName]"
+            maxWidth = 175
+            maxHeight = 36
+            format = center
+            vertical_alignment = center
+        }
+    }
+		
+	containerWindowType = {
+		name = "political_party_info_entry_custom"
+		position = { x = 0 y = 0 }
+		size = { width = 330 height = 18 }
+
+		#iconType = {
+		#	name = "leading_pol_party_bg"
+		#	position = { x = 0 y = 5 }
+		#	spriteType = "GFX_leading_pol_party_bg"
+		#}		
+		
+		iconType = {
+			name = "color_block_bg"
+			position = { x = 0 y = 2 }
+			spriteType = "GFX_pol_party_colour_bg"
+		}
+		
+		iconType = {
+			name = "color_block"
+			position = { x = 4 y = 6 }
+			spriteType = "GFX_pol_party_colour"
+		}
+		
+		#instantTextboxType = {
+		#	name = "score"
+		#	position = { x = 100 y = 4 }
+		#	font = "hoi_16mbs"
+		#	text = "score"
+		#	maxWidth = 60
+		#	maxHeight = 18
+		#}
+			
+		instantTextboxType = {
+			name = "name"
+			position = { x = 22 y = 4 }
+			font = "hoi_16mbs"
+			text = "[?temp_party.GetName] ([?lower_house:seats_@var:temp_party]/[?lower_house:percentage_@var:temp_party|%])"
+			fixedsize = yes
+			maxWidth = 175
+			maxHeight = 18
+		}
+	}
+
+	containerWindowType = {
+		name = "government_tab_window"	
+		position = { x=-6 y =78 }
+		show_position = { x=536 y =78 }
+		size = { width=550 height=100%% }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window_1b_border"
+		}
+
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "political_title"
+			position = { x = 45 y = 8 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "Government"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = -42 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		containerWindowType = {
+			name = "cabinet_window"
+			size = { width = 100%% height = 100%% }
+			position = { x = 0 y = 44 }
+			verticalScrollbar = "right_vertical_slider"
+			
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_window_1b_border"
+			}
+
+			gridBoxType = {
+				name = "cabinet_grid"
+				position = { x = 12 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 171 height = 250 }
+				max_slots_horizontal = 3
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "cabinet_entry"
+		size = { width = 171 height = 250 }
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window_small_small"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = 6 y = 8 }
+			font = "hoi_20b"
+			text = "[GetPositionTitle]"
+			maxWidth = 160
+			maxHeight = 16
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		iconType ={
+			name ="cabinet_portrait"
+			spriteType = "GFX_idea_categories"
+			position = { x=85 y=112 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.74
+			centerposition = yes
+			pdx_tooltip = cabinet_portrait_tt
+		}
+
+		buttonType ={
+			name ="cabinet_portrait_button"
+			spriteType = "GFX_idea_categories"
+			position = { x=85 y=112 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.74
+			centerposition = yes
+			pdx_tooltip = cabinet_portrait_button_tt
+		}
+
+		iconType = {
+			name = "diplo_leader_frame"
+			position = { x=85 y=116 }
+			spriteType = "GFX_diplo_leader_frame"
+			alwaystransparent = yes
+			centerposition = yes
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = 4 y = 202 }
+			font = "hoi_20bs"
+			text = "[?position_holder_@var:position_no.GetName]"
+			maxWidth = 163
+			maxHeight = 32
+			format = center
+			vertical_alignment = top
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "government_position_select_window"
+		position = { x = 1080 y = 80 }
+		size = { width=500 height=590 }
+		show_sound = open_sub_window
+
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+
+		instantTextboxType = {
+			name = "title"
+			position = { x = 0 y = 4 }
+			font = "hoi_20b"
+			text = "[GetPositionTitle]"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "switch"
+			position = { x = 0 y = 26 }
+			font = "hoi_18b"
+			text = "government_position_select_switch"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+
+		containerWindowType = {
+			name = "ideas"
+			position = { x = 0 y = 98 }
+			size = { width=500 height=100%% }	
+			
+			containerWindowType = {
+				name = "grid"
+				position = { x = 0 y = 0 }
+				size = { width=100%% height=100%% }
+				verticalScrollbar = "right_vertical_slider"
+				scroll_wheel_factor = 37
+				smooth_scrolling = yes
+				orientation = center_up
+				origo = center_up
+	
+				margin = { top = 6 bottom = 15 }	
+				
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_tiled_window2_1b_border"
+				}
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_tiled_generic_overlay_bg1_small"
+					position = { x = -1 y = 0 }					
+				}
+
+				gridBoxType = {
+					name = "box_grid"
+					position = { x = 10 y = 10 }
+					size = { width = 100%% height = 1 }
+					slotsize = { width = 231 height = 74 }
+					max_slots_horizontal = 2
+					add_horizontal = yes
+					format = "UPPER_LEFT"
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "header"
+			position = { x = 0 y = 43 }
+			size = { width=100% height=50 }
+
+			containerWindowType = {
+				name = "header_background"
+				position = { x = 0 y = 0 }
+				size = { width=99% height=100% }
+
+				margin = { top = 6 bottom = 12 }	
+
+				background = {
+					name = "head_Background"
+					quadTextureSprite ="GFX_overview_top_strip_small"
+				}
+			}
+		}
+
+		buttonType = {
+			name = "close"
+			position = { x = -50 y = 5 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+	containerWindowType = {
+		name = "government_position_select_item"
+		size = { width = 231 height = 74 }
+		clipping = no
+			
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+
+		buttonType = {
+			name = "entry_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_idea_entry_bg_2"
+			clicksound = click_default
+			pdx_tooltip = "government_position_select_item_tt"
+		}
+			
+		iconType = {
+			name = "entry_icon"
+			position = { x = 42 y = 38 }
+			spriteType = "GFX_placeholder_bordered"
+			centerposition = yes
+			alwaystransparent = yes
+			scale = 0.25
+		}
+
+		#iconType = {
+		#	name = "idea_traits"
+		#	position = { x = 53 y = 51 }
+		#	spriteType = "GFX_idea_traits_strip"
+		#	centerposition = yes
+		#	alwaystransparent = yes
+		#	frame = 1
+		#}
+
+		containerWindowType = {
+		    name = "traits_container"
+		    position = { x = 76 y = 0 }	
+		    show_position = { x = 0 y = 0 }
+			size = { width=170 height=100%% }
+			
+			instantTextboxType = {
+				name = "name"
+				position = { x = 0 y = 10 }
+				font = "hoi_18mbs"
+				fixedsize = yes			
+				text = "[?temp_char.GetName]"
+				maxWidth = 150
+				maxHeight = 13
+				format = left
+				alwaystransparent = yes			
+			}
+
+			instantTextboxType = {
+				name = "party"
+				position = { x = 0 y = 28 }
+				font = "hoi_16mbs"
+				fixedsize = yes			
+				text = "[?temp_char.GetCharPartyNameLong]"
+				maxWidth = 140
+				maxHeight = 100%%
+				format = left
+				alwaystransparent = yes			
+			}
+
+			instantTextboxType = {
+				name = "position"
+				position = { x = 0 y = 44 }
+				font = "hoi_16mbs"
+				fixedsize = yes			
+				text = "[?temp_char.GetPositions]"
+				maxWidth = 140
+				maxHeight = 17
+				format = left
+				alwaystransparent = yes			
+				fixedsize = yes
+			}
+		}
+		
+		instantTextboxType = {
+			name = "cost"
+			position = { x = 80 y = 47 }
+			font = "hoi_16mbs"
+			text = ""
+			maxWidth = 142
+			maxHeight = 10
+			format = right
+			alwaystransparent = yes
+		}
+
+		#instantTextboxType = {
+		#	name = "stats"
+		#	position = { x = 300 y = 32 }
+		#	font = "hoi_16mbs"
+		#	text = ""
+		#	maxWidth = 142
+		#	maxHeight = 10
+		#	format = center
+		#	alwaystransparent = yes
+		#}
+	}
+}

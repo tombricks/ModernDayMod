@@ -6,4 +6,5 @@ char_types = {
 
 	person = 1
 	political_party = 2
+	legislative_chamber = 3
 }

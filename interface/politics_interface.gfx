@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_leader_title_frame"
+		texturefile = "gfx/interface/leader_title_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_pol_view_bg_government"
+		texturefile = "gfx/interface/pol_view_bg_government.dds"
+	}
+	spriteType = {
+		name = "GFX_pol_view_bg_chart"
+		texturefile = "gfx/interface/pol_view_bg_chart.dds"
+	}
+}

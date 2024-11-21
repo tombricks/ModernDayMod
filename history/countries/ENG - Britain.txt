@@ -1,10 +1,18 @@
 capital = 126
 
-recruit_character = ENG_keir_starmer
-ENG_keir_starmer = {
-	set_variable = { token = token:ENG_keir_starmer }
-	set_variable = { char_type = constant:char_types.person }
+set_politics = {
+    ruling_party = democratic
 }
+set_popularities = {
+    democratic = 100
+}
+
+recruit_character = ENG_house_of_commons
+ENG_house_of_commons = {
+    set_variable = { token = token:ENG_house_of_commons }
+    set_variable = { char_type = constant:char_types.legislative_chamber }
+}
+set_variable = { lower_house = ENG_house_of_commons }
 
 recruit_character = ENG_labour_party
 ENG_labour_party = {
@@ -12,7 +20,7 @@ ENG_labour_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_labour_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 402 }
+	set_variable = { PREV.lower_house:seats_@THIS = 402 }
 }
 recruit_character = ENG_conservative_party
 ENG_conservative_party = {
@@ -20,7 +28,7 @@ ENG_conservative_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_conservative_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 121 }
+	set_variable = { PREV.lower_house:seats_@THIS = 121 }
 }
 recruit_character = ENG_liberal_democrats
 ENG_liberal_democrats = {
@@ -28,7 +36,7 @@ ENG_liberal_democrats = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_liberal_democrats_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 72 }
+	set_variable = { PREV.lower_house:seats_@THIS = 72 }
 }
 recruit_character = ENG_scottish_national_party
 ENG_scottish_national_party = {
@@ -36,7 +44,7 @@ ENG_scottish_national_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_scottish_national_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 9 }
+	set_variable = { PREV.lower_house:seats_@THIS = 9 }
 }
 recruit_character = ENG_democratic_unionist_party
 ENG_democratic_unionist_party = {
@@ -44,7 +52,7 @@ ENG_democratic_unionist_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_democratic_unionist_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 5 }
+	set_variable = { PREV.lower_house:seats_@THIS = 5 }
 }
 recruit_character = ENG_independent_alliance
 ENG_independent_alliance = {
@@ -52,7 +60,7 @@ ENG_independent_alliance = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_independent_alliance_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 5 }
+	set_variable = { PREV.lower_house:seats_@THIS = 5 }
 }
 recruit_character = ENG_reform_uk
 ENG_reform_uk = {
@@ -60,7 +68,7 @@ ENG_reform_uk = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_reform_uk_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 5 }
+	set_variable = { PREV.lower_house:seats_@THIS = 5 }
 }
 recruit_character = ENG_green_party
 ENG_green_party = {
@@ -68,7 +76,7 @@ ENG_green_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_green_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 4 }
+	set_variable = { PREV.lower_house:seats_@THIS = 4 }
 }
 recruit_character = ENG_plaid_cymru
 ENG_plaid_cymru = {
@@ -76,7 +84,7 @@ ENG_plaid_cymru = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_plaid_cymru_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 4 }
+	set_variable = { PREV.lower_house:seats_@THIS = 4 }
 }
 recruit_character = ENG_social_democratic_and_labour_party
 ENG_social_democratic_and_labour_party = {
@@ -84,7 +92,7 @@ ENG_social_democratic_and_labour_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_social_democratic_and_labour_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 2 }
+	set_variable = { PREV.lower_house:seats_@THIS = 2 }
 }
 recruit_character = ENG_alliance_party
 ENG_alliance_party = {
@@ -92,7 +100,7 @@ ENG_alliance_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_alliance_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 1 }
+	set_variable = { PREV.lower_house:seats_@THIS = 1 }
 }
 recruit_character = ENG_traditional_unionist_voice
 ENG_traditional_unionist_voice = {
@@ -100,7 +108,7 @@ ENG_traditional_unionist_voice = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_traditional_unionist_voice_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 1 }
+	set_variable = { PREV.lower_house:seats_@THIS = 1 }
 }
 recruit_character = ENG_ulster_unionist_party
 ENG_ulster_unionist_party = {
@@ -108,7 +116,7 @@ ENG_ulster_unionist_party = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_ulster_unionist_party_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 1 }
+	set_variable = { PREV.lower_house:seats_@THIS = 1 }
 }
 recruit_character = ENG_independents
 ENG_independents = {
@@ -116,7 +124,7 @@ ENG_independents = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_independents_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 10 }
+	set_variable = { PREV.lower_house:seats_@THIS = 10 }
 	set_character_flag = political_party_independents
 }
 recruit_character = ENG_speaker
@@ -125,7 +133,7 @@ ENG_speaker = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_speaker_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 1 }
+	set_variable = { PREV.lower_house:seats_@THIS = 1 }
 	set_character_flag = political_party_speaker
 }
 recruit_character = ENG_sinn_fein
@@ -134,8 +142,539 @@ ENG_sinn_fein = {
 	set_variable = { char_type = constant:char_types.political_party }
 	set_variable = { long_name = token:ENG_sinn_fein_long }
 	add_to_array = { PREV.political_parties = THIS }
-	set_variable = { PREV.lower_house_seats_@THIS = 7 }
+	set_variable = { PREV.lower_house:seats_@THIS = 7 }
 	set_character_flag = political_party_abstentionist
 }
 
 lower_house_calculate = yes
+
+recruit_character = ENG_keir_starmer
+ENG_keir_starmer = {
+	set_variable = { token = token:ENG_keir_starmer }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_keir_starmer }
+    set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_kemi_badenoch
+ENG_kemi_badenoch = {
+	set_variable = { token = token:ENG_kemi_badenoch }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_kemi_badenoch }
+    set_temp_variable = { target_party = ENG_conservative_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_charles_iii
+ENG_charles_iii = {
+	set_variable = { token = token:ENG_charles_iii }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_charles_iii }
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_angela_rayner
+ENG_angela_rayner = {
+	set_variable = { token = token:ENG_angela_rayner }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_angela_rayner }
+    set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_rachel_reeves
+ENG_rachel_reeves = {
+	set_variable = { token = token:ENG_rachel_reeves }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_rachel_reeves }
+    set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_yvette_cooper
+ENG_yvette_cooper = {
+	set_variable = { token = token:ENG_yvette_cooper }
+	set_variable = { char_type = constant:char_types.person }
+    set_variable = { portrait = token:GFX_portrait_ENG_yvette_cooper }
+    set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_ed_miliband
+ENG_ed_miliband = {
+	set_variable = { token = token:ENG_ed_miliband }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_ed_miliband }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_david_lammy
+ENG_david_lammy = {
+	set_variable = { token = token:ENG_david_lammy }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_david_lammy }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_pat_mcfadden
+ENG_pat_mcfadden = {
+	set_variable = { token = token:ENG_pat_mcfadden }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_pat_mcfadden }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_shabana_mahmood
+ENG_shabana_mahmood = {
+	set_variable = { token = token:ENG_shabana_mahmood }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_shabana_mahmood }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_wes_streeting
+ENG_wes_streeting = {
+	set_variable = { token = token:ENG_wes_streeting }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_wes_streeting }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_jonathan_reynolds
+ENG_jonathan_reynolds = {
+	set_variable = { token = token:ENG_jonathan_reynolds }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_jonathan_reynolds }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_liz_kendall
+ENG_liz_kendall = {
+	set_variable = { token = token:ENG_liz_kendall }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_liz_kendall }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_john_healey
+ENG_john_healey = {
+	set_variable = { token = token:ENG_john_healey }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_john_healey }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_louise_haigh
+ENG_louise_haigh = {
+	set_variable = { token = token:ENG_louise_haigh }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_louise_haigh }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_peter_kyle
+ENG_peter_kyle = {
+	set_variable = { token = token:ENG_peter_kyle }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_peter_kyle }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_hilary_benn
+ENG_hilary_benn = {
+	set_variable = { token = token:ENG_hilary_benn }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_hilary_benn }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_ian_murray
+ENG_ian_murray = {
+	set_variable = { token = token:ENG_ian_murray }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_ian_murray }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_bridget_phillipson
+ENG_bridget_phillipson = {
+	set_variable = { token = token:ENG_bridget_phillipson }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_bridget_phillipson }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_lisa_nandy
+ENG_lisa_nandy = {
+	set_variable = { token = token:ENG_lisa_nandy }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_lisa_nandy }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_angela_evans_smith
+ENG_angela_evans_smith = {
+	set_variable = { token = token:ENG_angela_evans_smith }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_angela_evans_smith }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_lucy_powell
+ENG_lucy_powell = {
+	set_variable = { token = token:ENG_lucy_powell }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_lucy_powell }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_jo_stevens
+ENG_jo_stevens = {
+	set_variable = { token = token:ENG_jo_stevens }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_jo_stevens }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_steve_reed
+ENG_steve_reed = {
+	set_variable = { token = token:ENG_steve_reed }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_steve_reed }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_alan_campbell
+ENG_alan_campbell = {
+	set_variable = { token = token:ENG_alan_campbell }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_alan_campbell }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_darren_jones
+ENG_darren_jones = {
+	set_variable = { token = token:ENG_darren_jones }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_darren_jones }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_richard_hermer
+ENG_richard_hermer = {
+	set_variable = { token = token:ENG_richard_hermer }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_richard_hermer }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+recruit_character = ENG_anneliese_dodds
+ENG_anneliese_dodds = {
+	set_variable = { token = token:ENG_anneliese_dodds }
+	set_variable = { char_type = constant:char_types.person }
+	set_variable = { portrait = token:GFX_portrait_ENG_anneliese_dodds }
+	set_temp_variable = { target_party = ENG_labour_party }
+	char_join_party = yes
+	add_to_array = { PREV.characters = THIS }
+}
+
+add_to_array = { government_positions = 1 }
+set_variable = { government_head_of_state = 1 }
+set_variable = { position_1 = token:position_sovereign }
+set_variable = { position_title_1 = token:title_king }
+set_variable = { position_title_long_1 = token:title_ENG_king }
+set_variable = { position_holder_1 = ENG_charles_iii }
+set_variable = { position_method_1 = token:government_method_hereditary }
+
+add_to_array = { government_positions = 2 }
+add_to_array = { government_cabinet = 2 }
+set_variable = { government_head_of_government = 2 }
+set_variable = { position_2 = token:position_head_of_government }
+set_variable = { position_title_2 = token:title_prime_minister }
+set_variable = { position_title_long_2 = token:title_ENG_prime_minister }
+set_variable = { position_holder_2 = ENG_keir_starmer }
+set_variable = { position_method_2 = token:government_method_chosen_by_body }
+
+add_to_array = { government_positions = 3 }
+add_to_array = { government_positions_changeable = 3 }
+add_to_array = { government_cabinet = 3 }
+set_variable = { government_deputy_head_of_government = 3 }
+set_variable = { position_3 = token:position_deputy_head_of_government }
+set_variable = { position_title_3 = token:title_deputy_prime_minister }
+set_variable = { position_holder_3 = ENG_angela_rayner }
+set_variable = { position_method_3 = token:government_method_chosen_by_person }
+set_variable = { position_method_choser_3 = 2 }
+
+add_to_array = { government_positions = 4 }
+add_to_array = { government_positions_changeable = 4 }
+add_to_array = { government_cabinet = 4 }
+set_variable = { position_4 = token:position_finance_minister }
+set_variable = { position_title_4 = token:title_chancellor }
+set_variable = { position_title_long_4 = token:title_ENG_chancellor }
+set_variable = { position_holder_4 = ENG_rachel_reeves }
+
+add_to_array = { government_positions = 5 }
+add_to_array = { government_positions_changeable = 5 }
+add_to_array = { government_cabinet = 5 }
+set_variable = { position_5 = token:position_interior_minister }
+set_variable = { position_title_5 = token:title_ENG_home_secretary }
+set_variable = { position_title_long_5 = token:title_ENG_home_secretary_long }
+set_variable = { position_holder_5 = ENG_yvette_cooper }
+
+add_to_array = { government_positions = 6 }
+add_to_array = { government_positions_changeable = 6 }
+add_to_array = { government_cabinet = 6 }
+set_variable = { position_6 = token:position_housing_minister }
+set_variable = { position_title_6 = token:title_ENG_housing_secretary }
+set_variable = { position_title_long_6 = token:title_ENG_housing_secretary_long }
+set_variable = { position_holder_6 = ENG_angela_rayner }
+
+add_to_array = { government_positions = 7 }
+add_to_array = { government_positions_changeable = 7 }
+add_to_array = { government_cabinet = 7 }
+set_variable = { position_7 = token:position_energy_minister }
+set_variable = { position_title_7 = token:title_ENG_energy_secretary }
+set_variable = { position_title_long_7 = token:title_ENG_energy_secretary_long }
+set_variable = { position_holder_7 = ENG_ed_miliband }
+
+add_to_array = { government_positions = 8 }
+add_to_array = { government_positions_changeable = 8 }
+add_to_array = { government_cabinet = 8 }
+set_variable = { position_8 = token:position_foreign_minister }
+set_variable = { position_title_8 = token:title_ENG_foreign_secretary }
+set_variable = { position_title_long_8 = token:title_ENG_foreign_secretary_long }
+set_variable = { position_holder_8 = ENG_david_lammy }
+
+add_to_array = { government_positions = 9 }
+add_to_array = { government_positions_changeable = 9 }
+add_to_array = { government_cabinet = 9 }
+set_variable = { position_9 = token:position_minister }
+set_variable = { position_title_9 = token:title_ENG_chancellor_lancaster }
+set_variable = { position_title_long_9 = token:title_ENG_chancellor_lancaster_long }
+set_variable = { position_holder_9 = ENG_pat_mcfadden }
+
+add_to_array = { government_positions = 10 }
+add_to_array = { government_positions_changeable = 10 }
+add_to_array = { government_cabinet = 10 }
+set_variable = { position_10 = token:position_justice_minister }
+set_variable = { position_title_10 = token:title_ENG_justice_secretary }
+set_variable = { position_title_long_10 = token:title_ENG_justice_secretary_long }
+set_variable = { position_holder_10 = ENG_shabana_mahmood }
+
+add_to_array = { government_positions = 11 }
+add_to_array = { government_positions_changeable = 11 }
+add_to_array = { government_cabinet = 11 }
+set_variable = { position_11 = token:position_health_minister }
+set_variable = { position_title_11 = token:title_ENG_health_secretary }
+set_variable = { position_title_long_11 = token:title_ENG_health_secretary_long }
+set_variable = { position_holder_11 = ENG_wes_streeting }
+
+add_to_array = { government_positions = 12 }
+add_to_array = { government_positions_changeable = 12 }
+add_to_array = { government_cabinet = 12 }
+set_variable = { position_12 = token:position_commerce_minister }
+set_variable = { position_title_12 = token:title_ENG_business_secretary }
+set_variable = { position_title_long_12 = token:title_ENG_business_secretary_long }
+set_variable = { position_holder_12 = ENG_jonathan_reynolds }
+
+add_to_array = { government_positions = 13 }
+add_to_array = { government_positions_changeable = 13 }
+add_to_array = { government_cabinet = 13 }
+set_variable = { position_13 = token:position_labour_minister }
+set_variable = { position_title_13 = token:title_ENG_dwp_secretary }
+set_variable = { position_title_long_13 = token:title_ENG_dwp_secretary_long }
+set_variable = { position_holder_13 = ENG_liz_kendall }
+
+add_to_array = { government_positions = 14 }
+add_to_array = { government_positions_changeable = 14 }
+add_to_array = { government_cabinet = 14 }
+set_variable = { position_14 = token:position_defence_minister }
+set_variable = { position_title_14 = token:title_ENG_defence_secretary }
+set_variable = { position_title_long_14 = token:title_ENG_defence_secretary_long }
+set_variable = { position_holder_14 = ENG_john_healey }
+
+add_to_array = { government_positions = 15 }
+add_to_array = { government_positions_changeable = 15 }
+add_to_array = { government_cabinet = 15 }
+set_variable = { position_15 = token:position_transport_minister }
+set_variable = { position_title_15 = token:title_ENG_transport_secretary }
+set_variable = { position_title_long_15 = token:title_ENG_transport_secretary_long }
+set_variable = { position_holder_15 = ENG_louise_haigh }
+
+add_to_array = { government_positions = 16 }
+add_to_array = { government_positions_changeable = 16 }
+add_to_array = { government_cabinet = 16 }
+set_variable = { position_16 = token:position_science_minister }
+set_variable = { position_title_16 = token:title_ENG_science_secretary }
+set_variable = { position_title_long_16 = token:title_ENG_science_secretary_long }
+set_variable = { position_holder_16 = ENG_peter_kyle }
+
+add_to_array = { government_positions = 17 }
+add_to_array = { government_positions_changeable = 17 }
+add_to_array = { government_cabinet = 17 }
+set_variable = { position_17 = token:position_regional_minister }
+set_variable = { position_title_17 = token:title_ENG_ni_secretary }
+set_variable = { position_title_long_17 = token:title_ENG_ni_secretary_long }
+set_variable = { position_holder_17 = ENG_hilary_benn }
+
+add_to_array = { government_positions = 18 }
+add_to_array = { government_positions_changeable = 18 }
+add_to_array = { government_cabinet = 18 }
+set_variable = { position_18 = token:position_regional_minister }
+set_variable = { position_title_18 = token:title_ENG_scotland_secretary }
+set_variable = { position_title_long_18 = token:title_ENG_scotland_secretary_long }
+set_variable = { position_holder_18 = ENG_ian_murray }
+
+add_to_array = { government_positions = 19 }
+add_to_array = { government_positions_changeable = 19 }
+add_to_array = { government_cabinet = 19 }
+set_variable = { position_19 = token:position_education_minister }
+set_variable = { position_title_19 = token:title_ENG_education_secretary }
+set_variable = { position_title_long_19 = token:title_ENG_education_secretary_long }
+set_variable = { position_holder_19 = ENG_bridget_phillipson }
+
+add_to_array = { government_positions = 20 }
+add_to_array = { government_positions_changeable = 20 }
+add_to_array = { government_cabinet = 20 }
+set_variable = { position_20 = token:position_culture_minister }
+set_variable = { position_title_20 = token:title_ENG_culture_secretary }
+set_variable = { position_title_long_20 = token:title_ENG_culture_secretary_long }
+set_variable = { position_holder_20 = ENG_lisa_nandy }
+
+add_to_array = { government_positions = 21 }
+add_to_array = { government_positions_changeable = 21 }
+add_to_array = { government_cabinet = 21 }
+set_variable = { position_21 = token:position_legislative_leader }
+set_variable = { position_title_21 = token:title_ENG_lords_leader }
+set_variable = { position_title_long_21 = token:title_ENG_lords_leader_long }
+set_variable = { position_holder_21 = ENG_angela_evans_smith }
+
+add_to_array = { government_positions = 22 }
+add_to_array = { government_positions_changeable = 22 }
+add_to_array = { government_cabinet = 22 }
+set_variable = { position_22 = token:position_legislative_leader }
+set_variable = { position_title_22 = token:title_ENG_commons_leader }
+set_variable = { position_title_long_22 = token:title_ENG_commons_leader_long }
+set_variable = { position_holder_22 = ENG_lucy_powell }
+
+add_to_array = { government_positions = 23 }
+add_to_array = { government_positions_changeable = 23 }
+add_to_array = { government_cabinet = 23 }
+set_variable = { position_23 = token:position_regional_minister }
+set_variable = { position_title_23 = token:title_ENG_wales_secretary }
+set_variable = { position_title_long_23 = token:title_ENG_wales_secretary_long }
+set_variable = { position_holder_23 = ENG_jo_stevens }
+
+add_to_array = { government_positions = 24 }
+add_to_array = { government_positions_changeable = 24 }
+add_to_array = { government_cabinet = 24 }
+set_variable = { position_24 = token:position_environment_minister }
+set_variable = { position_title_24 = token:title_ENG_environment_secretary }
+set_variable = { position_title_long_24 = token:title_ENG_environment_secretary_long }
+set_variable = { position_holder_24 = ENG_steve_reed }
+
+add_to_array = { government_positions = 25 }
+add_to_array = { government_positions_changeable = 25 }
+add_to_array = { government_cabinet = 25 }
+set_variable = { position_25 = token:position_legislative_whip }
+set_variable = { position_title_25 = token:title_ENG_chief_whip }
+set_variable = { position_title_long_25 = token:title_ENG_chief_whip_long }
+set_variable = { position_holder_25 = ENG_alan_campbell }
+
+add_to_array = { government_positions = 26 }
+add_to_array = { government_positions_changeable = 26 }
+add_to_array = { government_cabinet = 26 }
+set_variable = { position_26 = token:position_junior_minister }
+set_variable = { position_title_26 = token:title_ENG_chief_secretary }
+set_variable = { position_title_long_26 = token:title_ENG_chief_secretary_long }
+set_variable = { position_holder_26 = ENG_darren_jones }
+
+add_to_array = { government_positions = 27 }
+add_to_array = { government_positions_changeable = 27 }
+add_to_array = { government_cabinet = 27 }
+set_variable = { position_27 = token:position_attorney_general }
+set_variable = { position_title_27 = token:title_ENG_attorney_general }
+set_variable = { position_title_long_27 = token:title_ENG_attorney_general_long }
+set_variable = { position_holder_27 = ENG_richard_hermer }
+
+add_to_array = { government_positions = 28 }
+add_to_array = { government_positions_changeable = 28 }
+add_to_array = { government_cabinet = 28 }
+set_variable = { position_28 = token:position_minister }
+set_variable = { position_title_28 = token:title_ENG_development_minister }
+set_variable = { position_title_long_28 = token:title_ENG_development_minister_long }
+set_variable = { position_holder_28 = ENG_anneliese_dodds }
+
+add_to_array = { government_positions = 1000 }
+set_variable = { position_1000 = token:position_leader_of_the_opposition }
+set_variable = { position_title_1000 = token:position_leader_of_the_opposition }
+set_variable = { position_title_long_1000 = token:title_ENG_leader_of_the_opposition }
+set_variable = { position_holder_1000 = ENG_kemi_badenoch }
+set_variable = { position_method_1000 = government_method_other }
+
+set_variable = { government_leading_party = ENG_labour_party }
+
+set_country_flag = government_monarchy
+set_variable = { government_structure = government_structure_unitary }
+set_variable = { government_chief_executive = government_head_of_government }
+
+government_calculate = yes
+government_characters_pool_calculate = yes
+
+### Character scope arrays
+# characters - All person characters
+# government_characters_pool - Generated, all selectable characters for government incl. extra
+# government_characters_pool_extra - Specified selectable characters
+# government_positions_characters - Generated, all characters with positions
+# government_cabinet_characters - Generated, all characters with cabinet positions
+### Position "scope" arrays
+# government_positions
+# government_cabinet

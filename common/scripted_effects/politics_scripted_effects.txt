@@ -1,0 +1,265 @@
+# position_X
+# position_title_X
+# position_title_long_X
+# position_holder_X
+# position_method_X
+# position_method_choser_X
+
+chamber_calculate = {
+	set_variable = { tmp_chamber:seats = 0 }
+	clear_array = tmp_chamber:parties
+	for_each_loop = {
+		array = political_parties
+		value = temp_party
+		add_to_variable = { tmp_chamber:seats = tmp_chamber:seats_@var:temp_party }
+		set_variable = { temp_party.seats_@var:tmp_chamber = tmp_chamber:seats_@var:temp_party }
+		if = {
+			limit = {
+				check_variable = {
+					tmp_chamber:seats_@var:temp_party > 0
+				}
+			}
+			add_to_array = { tmp_chamber:parties = temp_party }
+		}
+		else = {
+			set_variable = { tmp_chamber:percentage_@var:temp_party = 0 }
+		}
+	}
+
+	for_each_loop = {
+		array = tmp_chamber:parties
+		value = temp_party
+		set_variable = { tmp_chamber:percentage_@var:temp_party = tmp_chamber:seats_@var:temp_party }
+		divide_variable = { tmp_chamber:percentage_@var:temp_party = tmp_chamber:seats }
+	}
+}
+lower_house_calculate = {
+	set_temp_variable = { tmp_chamber = lower_house }
+	chamber_calculate = yes
+}
+
+government_calculate = {
+	for_each_scope_loop = {
+		array = characters
+		clear_array = government_positions_@PREV
+	}
+	for_each_loop = {
+		array = government_positions
+		value = position_no
+		var:position_holder_@var:position_no = {
+			add_to_array = { government_positions_@PREV = position_no }
+		}
+	}
+    government_positions_characters_calculate = yes
+    government_cabinet_characters_calculate = yes
+	government_ui_calculate = yes
+}
+government_ui_calculate = {
+	clear_array = government_ui
+	if = { limit = { has_government_paramount_leader = yes } add_to_array = { government_ui = government_paramount_leader } }
+	if = { limit = { has_government_head_of_state = yes } add_to_array = { government_ui = government_head_of_state } }
+	if = { limit = { has_government_head_of_government = yes } add_to_array = { government_ui = government_head_of_government } }
+	if = {
+		limit = {
+			check_variable = { government_ui^num = 1 }
+		}
+		set_variable = { leader_imx = 174 }
+		set_variable = { leader_x = 87 }
+	}
+	if = {
+		limit = {
+			check_variable = { government_ui^num = 2 }
+		}
+		set_variable = { leader_imx = 87 }
+		set_variable = { leader_x = 0 }
+	}
+	if = {
+		limit = {
+			check_variable = { government_ui^num = 3 }
+		}
+		set_variable = { leader_imx = 87 }
+		set_variable = { leader_x = 0 }
+		remove_from_array = { array = government_ui index = 2 }
+	}
+}
+government_positions_characters_calculate = {
+	clear_array = government_positions_characters
+	for_each_loop = {
+		array = government_positions
+		value = position_no
+		if = {
+			limit = {
+				NOT = { check_variable = { position_holder_@var:position_no = 1 } }
+			}
+			add_to_array = { government_positions_characters = position_holder_@var:position_no }
+		}
+	}
+}
+government_cabinet_characters_calculate = {
+	clear_array = government_cabinet_characters
+	for_each_loop = {
+		array = government_positions
+		value = position_no
+		if = {
+			limit = {
+				NOT = { check_variable = { position_holder_@var:position_no = 1 } }
+			}
+			add_to_array = { government_cabinet_characters = position_holder_@var:position_no }
+		}
+	}
+}
+
+government_characters_pool_calculate = {
+	clear_array = government_characters_pool
+	for_each_loop = {
+		array = government_characters_pool_extra
+		value = char
+		add_to_array = { government_characters_pool = char }
+	}
+	for_each_loop = {
+		array = characters
+		value = char
+		if = {
+			limit = {
+				NOT = {
+					is_in_array = { government_characters_pool = char }
+				}
+			}
+			# Adding
+			if = {
+				limit = {
+					check_variable = { char:party = government_leading_party }
+				}
+				add_to_array = { government_characters_pool = char }
+			}
+		}
+	}
+}
+
+char_leave_party = {
+	# target_char target_party
+	if = {
+		limit = {
+			var:target_char = {
+				char_has_party = yes
+			}
+		}
+		var:target_char = {
+			var:party = {
+				remove_from_array = { members = target_char }
+			}
+		}
+	}
+}
+char_join_party = {
+	owner = {
+		set_temp_variable = { target_char = PREV }
+		join_party = yes
+	}
+}
+join_party = {
+	var:target_char = {
+		set_variable = { party = target_party }
+	}
+	var:target_party = {
+		add_to_array = { members = target_char }
+	}
+}
+
+d_print_char_vars = {
+	every_character = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = abcdef }
+			}
+			print_variables = {
+				file = print_char_vars
+				append = no
+			}
+			set_global_flag = abcdef
+		}
+		else = {
+			print_variables = {
+				file = print_char_vars
+				append = yes
+			}
+		}
+	}
+	clr_global_flag = abcdef
+}
+d_print_country_vars = {
+	print_variables = {
+		file = print_char_vars
+		append = no
+	}
+}
+d_print_lower_house = {
+	var:lower_house = {
+		print_variables = {
+			file = print_char_vars
+			append = no
+		}
+	}
+}
+d_log_government = {
+	if = {
+		limit = {
+			check_variable = { government_head_of_government = government_head_of_state }
+		}
+		set_temp_variable = { position_no = government_head_of_state }
+		log = "HEAD OF STATE AND GOVERNMENT - [GetPositionTitle]"
+		log = "government_head_of_state/government_head_of_government: [?government_head_of_state]"
+		log_position_position_no = yes
+	}
+	else = {
+		set_temp_variable = { position_no = government_head_of_state }
+		log = "HEAD OF STATE - [GetPositionTitle]"
+		log = "government_head_of_state: [?government_head_of_state]"
+		log_position_position_no = yes
+
+		log = " "
+		
+		set_temp_variable = { position_no = government_head_of_government }
+		log = "HEAD OF GOVERNMENT - [GetPositionTitle]"
+		log = "government_head_of_government: [?government_head_of_government]"
+		log_position_position_no = yes
+	}
+	for_each_loop = {
+		array = government_cabinet
+		value = v
+		log = " "
+		set_temp_variable = { position_no = v }
+		log = "CABINET [?i] - [GetPositionTitle]"
+		log_position_position_no = yes
+	}
+}
+log_position_position_no = {
+	log = "position_[?position_no]: [?position_@var:position_no] ([?position_@var:position_no.GetTokenKey] [?position_@var:position_no.GetTokenLocalizedKey])"
+	log = "position_title_[?position_no]: [?position_title_@var:position_no] ([?position_title_@var:position_no.GetTokenKey] [?position_title_@var:position_no.GetTokenLocalizedKey])"
+	log = "position_title_long_[?position_no]: [?position_title_long_@var:position_no] ([?position_title_long_@var:position_no.GetTokenKey] [?position_title_long_@var:position_no.GetTokenLocalizedKey])"
+	log = "position_holder_[?position_no]: [?position_holder_@var:position_no] ([?var:position_holder_@var:position_no.GetName])"
+}
+d_log_character_parties = {
+	for_each_scope_loop = {
+		array = characters
+		log = "[THIS] [THIS.GetName] - [?THIS.party]"
+		if = {
+			limit = {
+				char_has_party = yes
+			}
+			log = "YES IN PARTY"
+		}
+		else = {
+			log = "NOT IN PARTY"
+		}
+		if = {
+			limit = {
+				char_has_positions = yes
+			}
+			log = "YES IN POSITIONS"
+		}
+		else = {
+			log = "NO IN POSITIONS"
+		}
+	}
+}

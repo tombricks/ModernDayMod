@@ -1,0 +1,167 @@
+defined_text = {
+    name = GetPositionTitle
+    text = {
+        trigger = {
+            has_variable = position_title_@var:position_no
+        }
+        localization_key = GetPositionTitle_1
+    }
+    text = {
+        localization_key = GetPositionTitle_2
+    }
+}
+defined_text = {
+	name = GetPositionTitleLong
+	text = {
+		trigger = {
+			has_variable = position_title_long_@var:position_no
+		}
+		localization_key = GetPositionTitleLong_0
+	}
+	text = {
+		localization_key = GetPositionTitleLong_1
+	}
+}
+defined_text = {
+    name = GetPartyName
+    text = {
+        localization_key = GetPartyName_0
+    }
+}
+defined_text = {
+	name = GetPartyNameLong
+	text = {
+		trigger = {
+			has_variable = long_name
+		}
+		localization_key = GetPartyNameLong_0
+	}
+	text = {
+		localization_key = GetPartyNameLong_1
+	}
+}
+defined_text = {
+	name = GetCharPartyName
+	text = {
+		trigger = {
+			char_has_party = yes
+		}
+		localization_key = GetCharPartyName_0
+	}
+	text = {
+		localization_key = GetCharPartyName_1
+	}
+}
+defined_text = {
+	name = GetCharPartyNameLong
+	text = {
+		trigger = {
+			char_has_party = yes
+		}
+		localization_key = GetCharPartyNameLong_0
+	}
+	text = {
+		trigger = {
+			log = "GetCharPartyNameLong = [THIS.GetName] has no party"
+		}
+		localization_key = GetCharPartyNameLong_1
+	}
+}
+defined_text = {
+	name = Get_government_position_select_item
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { position_holder_@var:government_position_select = temp_char }
+			}
+		}
+		localization_key = "government_position_select_item"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetPositions
+	text = {
+		trigger = {
+			char_has_positions = yes
+			set_temp_variable = { GetPositions_idx = -1 }
+		}
+		localization_key = GetPositions_0
+	}
+	text = {
+		localization_key = GetPositions_1
+	}
+}
+defined_text = {
+	name = GetPositions_list
+	text = {
+		trigger = {
+			add_to_temp_variable = { GetPositions_idx = 1 }
+			NOT = { check_variable = { GetPositions_idx = government_positions_@PREV^num } }
+			set_temp_variable = { original_pos = position_no }
+			set_temp_variable = { position_no = government_positions_@PREV^GetPositions_idx }
+			check_variable = { GetPositions_idx = 0 }
+			owner = {
+				set_temp_variable = { c_owner = THIS }
+			}
+		}
+		localization_key = GetPositions_list_0
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { GetPositions_idx = government_positions_@PREV^num } }
+		}
+		localization_key = GetPositions_list_1
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { position_no = original_pos }
+		}
+		localization_key = GetPositions_list_2
+	}
+}
+defined_text = {
+	name = GetGoverningPartyName
+	text = {
+		trigger = {
+			has_government_leading_party = yes
+		}
+		localization_key = GetGoverningParty_0
+	}
+	text = {
+		localization_key = GetGoverningParty_1
+	}
+}
+defined_text = {
+	name = GetGoverningPartyNameLong
+	text = {
+		trigger = {
+			has_government_leading_party = yes
+		}
+		localization_key = GetGoverningPartyLong_0
+	}
+	text = {
+		localization_key = GetGoverningPartyLong_1
+	}
+}
+defined_text = {
+	name = GetGovernmentType
+	text = {
+		trigger = {
+			has_country_flag = government_monarchy
+			check_variable = { position_method_@var:government_head_of_state = government_method_hereditary }
+		}
+		localization_key = GetGovernmentType_0
+	}
+	text = {
+		trigger = {
+			has_country_flag = government_monarchy
+		}
+		localization_key = GetGovernmentType_1
+	}
+	text = {
+		localization_key = GetGovernmentType_2
+	}
+}

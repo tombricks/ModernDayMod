@@ -1,0 +1,212 @@
+scripted_gui = {
+	politics_tab_gui = {
+		context_type = player_context
+		window_name = "politics_tab_window"
+		parent_window_token = politics_tab
+
+		visible = { always = yes }
+		ai_enabled = { always = no }
+
+		properties = {
+			leader_portrait = {
+				image = "[?portrait_token.GetTokenKey]"
+				x = leader_imx
+			}
+			leader_frame = { x = leader_imx }
+			leader_name = { x = leader_x }
+			leader_title = { x = leader_x }
+			cabinet_portrait = {
+				image = "[?portrait_token.GetTokenKey]"
+			}
+			cabinet_portrait_button = {
+				image = "[?portrait_token.GetTokenKey]"
+			}
+		}
+
+		dynamic_lists = {
+			political_parties_grid = {
+				array = lower_house:parties
+				value = temp_party
+				entry_container = political_party_info_entry_custom
+			}
+			leaders_grid = {
+				array = government_ui
+				value = position_no
+				index = position_idx
+				entry_container = leader_box
+			}
+			government_grid = {
+				array = government_cabinet
+				value = position_no
+				entry_container = cabinet_box
+			}
+		}
+
+		triggers = {
+			leader_portrait_visible = {
+				set_temp_variable = { temp_char = position_holder_@var:position_no }
+				set_temp_variable = { portrait_token = temp_char:portrait }
+			}
+			cabinet_portrait_button_click_enabled = {
+				set_temp_variable = { temp_char = position_holder_@var:position_no }
+				set_temp_variable = { portrait_token = temp_char:portrait }
+			}
+			cabinet_portrait_button_visible = {
+				is_in_array = { government_positions_changeable = position_no }
+			}
+		}
+
+		effects = {
+			government_button_click = {
+				if = {
+					limit = {
+						has_country_flag = government_tab_gui_open
+					}
+					clr_country_flag = government_tab_gui_open
+				}
+				else = {
+					set_country_flag = government_tab_gui_open
+				}
+			}
+			cabinet_portrait_click = {
+				clear_variable = government_position_select
+			}
+			cabinet_portrait_alt_click = {
+				if = {
+					limit = {
+						is_debug = yes
+					}
+					if = {
+						limit = {
+							check_variable = { government_position_select = position_no }
+						}
+					}
+					else = {
+						set_variable = { government_position_select = position_no }
+					}
+				}
+			}
+			cabinet_portrait_button_click = {
+				if = {
+					limit = {
+						check_variable = { government_position_select = position_no }
+					}
+					clear_variable = government_position_select
+				}
+				else = {
+					set_variable = { government_position_select = position_no }
+				}
+			}
+		}
+	}
+	government_tab_gui = {
+		context_type = player_context
+		window_name = "government_tab_window"
+
+		visible = { has_country_flag = government_tab_gui_open }
+		ai_enabled = { always = no }
+
+		properties = {
+			cabinet_portrait = {
+				image = "[?portrait_token.GetTokenKey]"
+			}
+			cabinet_portrait_button = {
+				image = "[?portrait_token.GetTokenKey]"
+			}
+		}
+
+		triggers = {
+			cabinet_portrait_button_click_enabled = {
+				set_temp_variable = { temp_char = position_holder_@var:position_no }
+				set_temp_variable = { portrait_token = temp_char:portrait }
+			}
+			cabinet_portrait_button_visible = {
+				is_in_array = { government_positions_changeable = position_no }
+			}
+		}
+
+		effects = {
+			close_button_click = {
+				clr_country_flag = government_tab_gui_open
+			}
+			cabinet_portrait_click = {
+				clear_variable = government_position_select
+			}
+			cabinet_portrait_alt_click = {
+				if = {
+					limit = {
+						is_debug = yes
+					}
+					if = {
+						limit = {
+							check_variable = { government_position_select = position_no }
+						}
+					}
+					else = {
+						set_variable = { government_position_select = position_no }
+					}
+				}
+			}
+			cabinet_portrait_button_click = {
+				if = {
+					limit = {
+						check_variable = { government_position_select = position_no }
+					}
+					clear_variable = government_position_select
+				}
+				else = {
+					set_variable = { government_position_select = position_no }
+				}
+			}
+		}
+		
+		dynamic_lists = {
+			cabinet_grid = {
+				array = government_positions
+				value = position_no
+				entry_container = cabinet_entry
+			}
+		}
+	}
+	government_position_select_gui = {
+		context_type = player_context
+		window_name = "government_position_select_window"
+
+		visible = {
+			has_variable = government_position_select
+			set_temp_variable = { position_no = government_position_select }
+		}
+		ai_enabled = { always = no }
+
+		effects = {
+			close_click = {
+				clear_variable = government_position_select
+			}
+			entry_button_click = {
+				set_variable = { position_holder_@var:government_position_select = temp_char }
+				government_calculate = yes
+				clear_variable = government_position_select
+			}
+		}
+
+		triggers = {
+			entry_icon_visible = {
+				set_temp_variable = { portrait_token = temp_char:portrait }
+			}
+		}
+
+		properties = {
+			entry_icon = {
+				image = "[?portrait_token.GetTokenKey]"
+			}
+		}
+
+		dynamic_lists = {
+			box_grid = {
+				array = government_characters_pool
+				entry_container = "[Get_government_position_select_item]"
+				value = temp_char
+			}
+		}
+	}
+}
