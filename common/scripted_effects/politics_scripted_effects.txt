@@ -32,9 +32,102 @@ chamber_calculate = {
 		set_variable = { tmp_chamber:percentage_@var:temp_party = tmp_chamber:seats_@var:temp_party }
 		divide_variable = { tmp_chamber:percentage_@var:temp_party = tmp_chamber:seats }
 	}
+	chamber_sort = yes
+}
+chamber_sort = {
+	for_each_loop = {
+		array = tmp_chamber:parties
+		value = temp_party
+		add_to_temp_array = { temp_parties = temp_party }
+	}
+	clear_array = tmp_chamber:parties
+	for_each_loop = {
+		array = temp_parties
+		value = temp_party
+		if = {
+			limit = {
+				var:temp_party = {
+					has_character_flag = political_party_abstentionist
+				}
+			}
+			add_to_temp_array = { abstentionist_parties = temp_party }
+		}
+		else_if = {
+			limit = {
+				var:temp_party = {
+					has_character_flag = political_party_speaker
+				}
+			}
+			add_to_temp_array = { speaker_parties = temp_party }
+		}
+		else_if = {
+			limit = {
+				var:temp_party = {
+					has_character_flag = political_party_independents
+				}
+			}
+			add_to_temp_array = { independents_parties = temp_party }
+		}
+		else_if = {
+			limit = {
+				check_variable = { tmp_chamber:parties^num = 0 }
+			}
+			add_to_array = { tmp_chamber:parties = temp_party }
+		}
+		else = {
+			clr_country_flag = sorted_found
+			for_each_loop = {
+				array = tmp_chamber:parties
+				value = temp_party_2
+				index = idx
+				break = sort_break
+
+				if = {
+					limit = {
+						check_variable = { tmp_chamber:seats_@var:temp_party > tmp_chamber:seats_@var:temp_party_2 }
+					}
+					add_to_array = {
+						array = tmp_chamber:parties
+						index = idx
+						value = temp_party
+					}
+					set_country_flag = sorted_found
+					add_to_temp_variable = { sort_break = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = sorted_found }
+				}
+				add_to_array = {
+					array = tmp_chamber:parties
+					value = temp_party
+				}
+			}
+		}
+	}
+	for_each_loop = {
+		array = independents_parties
+		value = temp_party
+		add_to_array = { tmp_chamber:parties = temp_party }
+	}
+	for_each_loop = {
+		array = speaker_parties
+		value = temp_party
+		add_to_array = { tmp_chamber:parties = temp_party }
+	}
+	for_each_loop = {
+		array = abstentionist_parties
+		value = temp_party
+		add_to_array = { tmp_chamber:parties = temp_party }
+	}
 }
 lower_house_calculate = {
 	set_temp_variable = { tmp_chamber = lower_house }
+	chamber_calculate = yes
+}
+upper_house_calculate = {
+	set_temp_variable = { tmp_chamber = upper_house }
 	chamber_calculate = yes
 }
 
@@ -108,7 +201,6 @@ government_cabinet_characters_calculate = {
 		}
 	}
 }
-
 government_characters_pool_calculate = {
 	clear_array = government_characters_pool
 	for_each_loop = {
@@ -162,6 +254,20 @@ join_party = {
 		set_variable = { party = target_party }
 	}
 	var:target_party = {
+		add_to_array = { members = target_char }
+	}
+}
+char_join_affiliation = {
+	owner = {
+		set_temp_variable = { target_char = PREV }
+		join_affiliation = yes
+	}
+}
+join_affiliation = {
+	var:target_char = {
+		add_to_array = { affiliations = target_affiliation }
+	}
+	var:target_affiliation = {
 		add_to_array = { members = target_char }
 	}
 }

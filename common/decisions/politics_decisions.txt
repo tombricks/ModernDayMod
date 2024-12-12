@@ -1,2 +1,17 @@
 debug_decisions = {
+	DEBUG_ENG_swap_hog = {
+		visible = { }
+		complete_effect = {
+			ENG = {
+				ENG_keir_starmer = {
+					set_variable = { party = ENG_ulster_unionist_party }
+				}
+			}
+			GER = {
+				ENG_keir_starmer = {
+					set_variable = { party = ENG_sinn_fein }
+				}
+			}
+		}
+	}
 }

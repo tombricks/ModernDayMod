@@ -18,9 +18,6 @@ state={
 			anti_air_building = 5
 			radar_station = 1
 			air_base = 10
-			11374 = {
-				naval_base = 10
-			}
 
 			6103 = { 
 			    landmark_big_ben = {
@@ -42,7 +39,7 @@ state={
 	}
 
 	provinces={
-		6103 9239 11333 11374 
+		6103 11333 
 	}
 
 	local_supplies=0.0 

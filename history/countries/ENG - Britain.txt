@@ -11,142 +11,236 @@ recruit_character = ENG_house_of_commons
 ENG_house_of_commons = {
     set_variable = { token = token:ENG_house_of_commons }
     set_variable = { char_type = constant:char_types.legislative_chamber }
+	add_to_array = { PREV.government_chambers = THIS }
 }
 set_variable = { lower_house = ENG_house_of_commons }
+recruit_character = ENG_house_of_lords
+ENG_house_of_lords = {
+    set_variable = { token = token:ENG_house_of_lords }
+    set_variable = { char_type = constant:char_types.legislative_chamber }
+	add_to_array = { PREV.government_chambers = THIS }
+}
+set_variable = { upper_house = ENG_house_of_lords }
+set_variable = { selected_chamber = ENG_house_of_commons }
+set_variable = { selected_chamber_index = 0 }
 
 recruit_character = ENG_labour_party
 ENG_labour_party = {
 	set_variable = { token = token:ENG_labour_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_labour_party_long }
+	set_variable = { name_token = token:ENG_labour_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 402 }
+	set_variable = { PREV.upper_house:seats_@THIS = 187 }
+	set_variable = { color = 2 }
+	add_to_array = { ideologies = token:ideology_social_democracy }
+	add_to_array = { ideologies = token:ideology_british_unionism }
+}
+recruit_character = ENG_cooperative_party
+ENG_cooperative_party = {
+	set_variable = { token = token:ENG_cooperative_party }
+	set_variable = { char_type = constant:char_types.political_party }
+	set_variable = { name_token = token:ENG_cooperative_party }
+	add_to_array = { PREV.political_parties = THIS }
+	set_variable = { color = 18 }
+	add_to_array = { ideologies = token:ideology_cooperatism }
+	add_to_array = { ideologies = token:ideology_social_democracy }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_conservative_party
 ENG_conservative_party = {
 	set_variable = { token = token:ENG_conservative_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_conservative_party_long }
+	set_variable = { name_token = token:ENG_conservative_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 121 }
+	set_variable = { PREV.upper_house:seats_@THIS = 272 }
+	set_variable = { color = 3 }
+	add_to_array = { ideologies = token:ideology_conservatism }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_liberal_democrats
 ENG_liberal_democrats = {
 	set_variable = { token = token:ENG_liberal_democrats }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_liberal_democrats_long }
+	set_variable = { name_token = token:ENG_liberal_democrats }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 72 }
+	set_variable = { PREV.upper_house:seats_@THIS = 78 }
+	set_variable = { color = 4 }
+	add_to_array = { ideologies = token:ideology_liberalism }
+	add_to_array = { ideologies = token:ideology_europeanism }
+	add_to_array = { ideologies = token:ideology_british_federalism }
 }
 recruit_character = ENG_scottish_national_party
 ENG_scottish_national_party = {
 	set_variable = { token = token:ENG_scottish_national_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_scottish_national_party_long }
+	set_variable = { name_token = token:ENG_scottish_national_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 9 }
+	set_variable = { color = 5 }
+	add_to_array = { ideologies = token:ideology_scottish_independence }
+	add_to_array = { ideologies = token:ideology_europeanism }
+	add_to_array = { ideologies = token:ideology_social_democracy }
 }
 recruit_character = ENG_democratic_unionist_party
 ENG_democratic_unionist_party = {
 	set_variable = { token = token:ENG_democratic_unionist_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_democratic_unionist_party_long }
+	set_variable = { name_token = token:ENG_democratic_unionist_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 5 }
+	set_variable = { PREV.upper_house:seats_@THIS = 6 }
+	set_variable = { color = 6 }
+	add_to_array = { ideologies = token:ideology_national_conservatism }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_independent_alliance
 ENG_independent_alliance = {
 	set_variable = { token = token:ENG_independent_alliance }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_independent_alliance_long }
+	set_variable = { name_token = token:ENG_independent_alliance }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 5 }
+	set_variable = { color = 7 }
 }
 recruit_character = ENG_reform_uk
 ENG_reform_uk = {
 	set_variable = { token = token:ENG_reform_uk }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_reform_uk_long }
+	set_variable = { name_token = token:ENG_reform_uk }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 5 }
+	set_variable = { color = 8 }
+	add_to_array = { ideologies = token:ideology_right_wing_populism }
+	add_to_array = { ideologies = token:ideology_euroscepticism }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_green_party
 ENG_green_party = {
 	set_variable = { token = token:ENG_green_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_green_party_long }
+	set_variable = { name_token = token:ENG_green_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 4 }
+	set_variable = { PREV.upper_house:seats_@THIS = 2 }
+	set_variable = { color = 9 }
+	add_to_array = { ideologies = token:ideology_greenism }
+	add_to_array = { ideologies = token:ideology_progressivism }
 }
 recruit_character = ENG_plaid_cymru
 ENG_plaid_cymru = {
 	set_variable = { token = token:ENG_plaid_cymru }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_plaid_cymru_long }
+	set_variable = { name_token = token:ENG_plaid_cymru }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 4 }
+	set_variable = { PREV.upper_house:seats_@THIS = 2 }
+	set_variable = { color = 10 }
+	add_to_array = { ideologies = token:ideology_social_democracy }
+	add_to_array = { ideologies = token:ideology_welsh_independence }
 }
 recruit_character = ENG_social_democratic_and_labour_party
 ENG_social_democratic_and_labour_party = {
 	set_variable = { token = token:ENG_social_democratic_and_labour_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_social_democratic_and_labour_party_long }
+	set_variable = { name_token = token:ENG_social_democratic_and_labour_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 2 }
+	set_variable = { color = 11 }
+	add_to_array = { ideologies = token:ideology_social_democracy }
+	add_to_array = { ideologies = token:ideology_irish_republicanism }
 }
 recruit_character = ENG_alliance_party
 ENG_alliance_party = {
 	set_variable = { token = token:ENG_alliance_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_alliance_party_long }
+	set_variable = { name_token = token:ENG_alliance_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 1 }
+	set_variable = { color = 12 }
+	add_to_array = { ideologies = token:ideology_liberalism }
+	add_to_array = { ideologies = token:ideology_europeanism }
 }
 recruit_character = ENG_traditional_unionist_voice
 ENG_traditional_unionist_voice = {
 	set_variable = { token = token:ENG_traditional_unionist_voice }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_traditional_unionist_voice_long }
+	set_variable = { name_token = token:ENG_traditional_unionist_voice }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 1 }
+	set_variable = { color = 13 }
+	add_to_array = { ideologies = token:ideology_right_wing_populism }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_ulster_unionist_party
 ENG_ulster_unionist_party = {
 	set_variable = { token = token:ENG_ulster_unionist_party }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_ulster_unionist_party_long }
+	set_variable = { name_token = token:ENG_ulster_unionist_party }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 1 }
+	set_variable = { PREV.upper_house:seats_@THIS = 3 }
+	set_variable = { color = 14 }
+	add_to_array = { ideologies = token:ideology_conservatism }
+	add_to_array = { ideologies = token:ideology_british_unionism }
 }
 recruit_character = ENG_independents
 ENG_independents = {
 	set_variable = { token = token:ENG_independents }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_independents_long }
+	set_variable = { name_token = token:ENG_independents }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 10 }
+	set_variable = { PREV.upper_house:seats_@THIS = 45 }
 	set_character_flag = political_party_independents
+	set_variable = { color = 0 }
 }
 recruit_character = ENG_speaker
 ENG_speaker = {
 	set_variable = { token = token:ENG_speaker }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_speaker_long }
+	set_variable = { name_token = token:ENG_speaker }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 1 }
+	set_variable = { PREV.upper_house:seats_@THIS = 1 }
 	set_character_flag = political_party_speaker
+	set_variable = { color = 15 }
 }
 recruit_character = ENG_sinn_fein
 ENG_sinn_fein = {
 	set_variable = { token = token:ENG_sinn_fein }
 	set_variable = { char_type = constant:char_types.political_party }
-	set_variable = { long_name = token:ENG_sinn_fein_long }
+	set_variable = { name_token = token:ENG_sinn_fein }
 	add_to_array = { PREV.political_parties = THIS }
 	set_variable = { PREV.lower_house:seats_@THIS = 7 }
 	set_character_flag = political_party_abstentionist
+	set_variable = { color = 16 }
+	add_to_array = { ideologies = token:ideology_democratic_socialism }
+	add_to_array = { ideologies = token:ideology_irish_republicanism }
+}
+recruit_character = ENG_crossbenchers
+ENG_crossbenchers = {
+	set_variable = { token = token:ENG_crossbenchers }
+	set_variable = { char_type = constant:char_types.political_party }
+	set_variable = { name_token = token:ENG_crossbenchers }
+	add_to_array = { PREV.political_parties = THIS }
+	set_variable = { PREV.upper_house:seats_@THIS = 185 }
+	set_variable = { color = 7 }
+}
+recruit_character = ENG_bishops
+ENG_bishops = {
+	set_variable = { token = token:ENG_bishops }
+	set_variable = { char_type = constant:char_types.political_party }
+	set_variable = { name_token = token:ENG_bishops }
+	add_to_array = { PREV.political_parties = THIS }
+	set_variable = { PREV.upper_house:seats_@THIS = 25 }
+	set_variable = { color = 17 }
 }
 
 lower_house_calculate = yes
+upper_house_calculate = yes
 
 recruit_character = ENG_keir_starmer
 ENG_keir_starmer = {
@@ -155,6 +249,8 @@ ENG_keir_starmer = {
     set_variable = { portrait = token:GFX_portrait_ENG_keir_starmer }
     set_temp_variable = { target_party = ENG_labour_party }
 	char_join_party = yes
+    set_temp_variable = { target_affiliation = ENG_cooperative_party }
+	char_join_affiliation = yes
 	add_to_array = { PREV.characters = THIS }
 }
 
@@ -678,3 +774,7 @@ government_characters_pool_calculate = yes
 ### Position "scope" arrays
 # government_positions
 # government_cabinet
+
+set_temp_variable = { le_country = NIR }
+set_variable = { z1_seats_@NIR_@var:selected_chamber = 1 } 
+set_variable = { z2_seats_@NIR@var:selected_chamber = 2 } 

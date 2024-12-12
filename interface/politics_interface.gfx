@@ -11,4 +11,9 @@ spriteTypes = {
 		name = "GFX_pol_view_bg_chart"
 		texturefile = "gfx/interface/pol_view_bg_chart.dds"
 	}
+	spriteType = {
+		name = "GFX_party_color_list"
+		texturefile = "gfx/interface/party_color_list.dds"
+		noOfFrames = 18
+	}
 }

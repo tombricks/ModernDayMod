@@ -32,3 +32,9 @@ char_has_positions = {
 		has_positions = yes
 	}
 }
+party_has_name_variable = {
+	OR = {
+		has_variable = name_token
+		has_variable = party_token
+	}
+}

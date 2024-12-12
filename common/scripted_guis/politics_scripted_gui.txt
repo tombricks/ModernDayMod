@@ -21,11 +21,14 @@ scripted_gui = {
 			cabinet_portrait_button = {
 				image = "[?portrait_token.GetTokenKey]"
 			}
+			color_block = {
+				frame = color_block
+			}
 		}
 
 		dynamic_lists = {
 			political_parties_grid = {
-				array = lower_house:parties
+				array = selected_chamber:parties
 				value = temp_party
 				entry_container = political_party_info_entry_custom
 			}
@@ -54,6 +57,10 @@ scripted_gui = {
 			cabinet_portrait_button_visible = {
 				is_in_array = { government_positions_changeable = position_no }
 			}
+			color_block_visible = {
+				set_temp_variable = { color_block = temp_party:color }
+				log = "color_block: [?color_block]"
+			}
 		}
 
 		effects = {
@@ -67,6 +74,16 @@ scripted_gui = {
 				else = {
 					set_country_flag = government_tab_gui_open
 				}
+			}
+			legislature_button_click = {
+				add_to_variable = { selected_chamber_index = 1 }
+				if = {
+					limit = {
+						check_variable = { selected_chamber_index = government_chambers^num }
+					}
+					set_variable = { selected_chamber_index = 0 }
+				}
+				set_variable = { selected_chamber = government_chambers^selected_chamber_index }
 			}
 			cabinet_portrait_click = {
 				clear_variable = government_position_select

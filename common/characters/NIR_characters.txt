@@ -1,0 +1,5 @@
+characters = {
+	NIR_assembly = {
+		name = NIR_assembly
+	}
+}

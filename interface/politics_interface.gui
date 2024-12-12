@@ -15,15 +15,6 @@ guiTypes = {
 				name = "Background"		
 				quadTextureSprite ="GFX_tiled_window_transparent"
 			}
-
-			gridBoxType = {
-				name = "political_parties_grid"
-				position = { x = 0 y = 0 }
-				size = { width = 100%% height = 100%% }
-				slotsize = { width = 230 height = 16 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
 		}
 		
 		containerWindowType = {
@@ -124,6 +115,48 @@ guiTypes = {
                     vertical_alignment = top
                 }
             }
+
+			containerWindowType = {
+				name = "parties_box"
+				position = { x = 363 y = 301 }
+				size = { width = 169 height = 286 }
+			
+				background = {
+					name = "Background"		
+					quadTextureSprite ="GFX_tiled_window_1b_thin_border"
+				}
+
+                buttonType ={
+                    name ="legislature_button"
+                    spriteType = "GFX_sort_button_focus_171x35"
+                    position = { x= 0 y = 0 }
+                    Orientation = "UPPER_LEFT"
+					buttonFont = "hoi_18mbs"
+					buttonText = "[?selected_chamber.GetName]"
+					pdx_tooltip = legislature_button_tt
+                }
+
+                containerWindowType = {
+                    name = "parties_grid_box"
+                    position = { x = 4 y = 30 }
+                    size = { width = 165 height = 248 }
+			        verticalScrollbar = "right_vertical_slider"
+			
+                    background = {
+                        name = "Background"		
+                        quadTextureSprite ="GFX_tiled_window_transparent"
+                    }
+
+                    gridBoxType = {
+                        name = "political_parties_grid"
+                        position = { x = 4 y = 0 }
+                        size = { width = 140 height = 100%% }
+                        slotsize = { width = 330 height = 18 }
+                        max_slots_horizontal = 1
+                        format = "UPPER_LEFT"
+                    }
+                }
+			}
 		}
 	}
 			
@@ -217,7 +250,7 @@ guiTypes = {
 		
 	containerWindowType = {
 		name = "political_party_info_entry_custom"
-		position = { x = 0 y = 0 }
+		position = { x = 0 y = -2 }
 		size = { width = 330 height = 18 }
 
 		#iconType = {
@@ -235,6 +268,12 @@ guiTypes = {
 		iconType = {
 			name = "color_block"
 			position = { x = 4 y = 6 }
+			spriteType = "GFX_party_color_list"
+		}
+		
+		iconType = {
+			name = "color_block_overlay"
+			position = { x = 4 y = 6 }
 			spriteType = "GFX_pol_party_colour"
 		}
 		
@@ -251,9 +290,22 @@ guiTypes = {
 			name = "name"
 			position = { x = 22 y = 4 }
 			font = "hoi_16mbs"
-			text = "[?temp_party.GetName] ([?lower_house:seats_@var:temp_party]/[?lower_house:percentage_@var:temp_party|%])"
+			text = political_party_name
 			fixedsize = yes
-			maxWidth = 175
+			maxWidth = 112
+			maxHeight = 18
+			pdx_tooltip = political_party_info_entry_custom_tt
+		}
+			
+		instantTextboxType = {
+			name = "seats"
+			position = { x = 22 y = 4 }
+			font = "hoi_16mbs"
+			text = political_party_seats
+			format = right
+			alwaystransparent = yes
+			fixedsize = yes
+			maxWidth = 112
 			maxHeight = 18
 		}
 	}
@@ -353,7 +405,8 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			scale = 0.74
 			centerposition = yes
-			pdx_tooltip = cabinet_portrait_tt
+			pdx_tooltip = cabinet_tt
+			pdx_tooltip_delayed = cabinet_portrait_tt
 		}
 
 		buttonType ={
@@ -363,7 +416,8 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			scale = 0.74
 			centerposition = yes
-			pdx_tooltip = cabinet_portrait_button_tt
+			pdx_tooltip = cabinet_tt
+			pdx_tooltip_delayed = cabinet_portrait_tt
 		}
 
 		iconType = {

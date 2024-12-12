@@ -91,8 +91,14 @@ characters = {
 	ENG_house_of_commons = {
 		name = ENG_house_of_commons
 	}
+	ENG_house_of_lords = {
+		name = ENG_house_of_lords
+	}
 	ENG_labour_party = {
 		name = ENG_labour_party
+	}
+	ENG_cooperative_party = {
+		name = ENG_cooperative_party
 	}
 	ENG_liberal_democrats = {
 		name = ENG_liberal_democrats
@@ -138,5 +144,11 @@ characters = {
 	}
 	ENG_sinn_fein = {
 		name = ENG_sinn_fein
+	}
+	ENG_crossbenchers = {
+		name = ENG_crossbenchers
+	}
+	ENG_bishops = {
+		name = ENG_bishops
 	}
 }

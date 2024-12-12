@@ -1,16 +1,16 @@
-defined_text = {
-    name = GetPositionTitle
-    text = {
-        trigger = {
-            has_variable = position_title_@var:position_no
-        }
-        localization_key = GetPositionTitle_1
-    }
-    text = {
-        localization_key = GetPositionTitle_2
-    }
+defined_text = { # GetPositionTitle
+	name = GetPositionTitle
+	text = {
+		trigger = {
+			has_variable = position_title_@var:position_no
+		}
+		localization_key = GetPositionTitle_1
+	}
+	text = {
+		localization_key = GetPositionTitle_2
+	}
 }
-defined_text = {
+defined_text = { # GetPositionTitleLong
 	name = GetPositionTitleLong
 	text = {
 		trigger = {
@@ -22,25 +22,88 @@ defined_text = {
 		localization_key = GetPositionTitleLong_1
 	}
 }
-defined_text = {
-    name = GetPartyName
-    text = {
-        localization_key = GetPartyName_0
-    }
-}
-defined_text = {
-	name = GetPartyNameLong
+defined_text = { # GetPartyNameToken
+	name = GetPartyNameToken
 	text = {
 		trigger = {
-			has_variable = long_name
+			has_variable = name_token
 		}
-		localization_key = GetPartyNameLong_0
+		localization_key = "[?name_token.GetTokenKey]"
 	}
 	text = {
-		localization_key = GetPartyNameLong_1
+		trigger = {
+			has_variable = party_token
+		}
+		localization_key = "[?party_token.GetTokenKey]"
 	}
 }
-defined_text = {
+defined_text = { # d_GetPartyName
+	name = d_GetPartyName
+	text = {
+		trigger = {
+			party_has_name_variable = yes
+		}
+		localization_key = [GetPartyNameToken]
+	}
+	text = {
+		localization_key = GetPartyName_1
+	}
+}
+defined_text = { # GetPartyName
+	name = GetPartyName
+	text = {
+		localization_key = [d_GetPartyName]
+	}
+}
+defined_text = { # d_GetPartyNameLong
+	name = d_GetPartyNameLong
+	text = {
+		trigger = {
+			has_variable = name_token
+		}
+		localization_key = [?name_token.GetTokenKey]_long
+	}
+	text = {
+		trigger = {
+			has_variable = party_token
+		}
+		localization_key = [?party_token.GetTokenKey]_long
+	}
+	text = {
+		localization_key = "[GetPartyName]"
+	}
+}
+defined_text = { # GetPartyNameLong
+	name = GetPartyNameLong
+	text = {
+		localization_key = [d_GetPartyNameLong]
+	}
+}
+defined_text = { # d_GetPartyNameAcronym
+	name = d_GetPartyNameAcronym
+	text = {
+		trigger = {
+			has_variable = name_token
+		}
+		localization_key = [?name_token.GetTokenKey]_acronym
+	}
+	text = {
+		trigger = {
+			has_variable = party_token
+		}
+		localization_key = [?party_token.GetTokenKey]_acronym
+	}
+	text = {
+		localization_key = "[GetPartyName]"
+	}
+}
+defined_text = { # GetPartyNameAcronym
+	name = GetPartyNameAcronym
+	text = {
+		localization_key = [d_GetPartyNameAcronym]
+	}
+}
+defined_text = { # GetCharPartyName
 	name = GetCharPartyName
 	text = {
 		trigger = {
@@ -52,7 +115,7 @@ defined_text = {
 		localization_key = GetCharPartyName_1
 	}
 }
-defined_text = {
+defined_text = { # GetCharPartyNameLong
 	name = GetCharPartyNameLong
 	text = {
 		trigger = {
@@ -67,7 +130,7 @@ defined_text = {
 		localization_key = GetCharPartyNameLong_1
 	}
 }
-defined_text = {
+defined_text = { # Get_government_position_select_item
 	name = Get_government_position_select_item
 	text = {
 		trigger = {
@@ -81,7 +144,7 @@ defined_text = {
 		localization_key = ""
 	}
 }
-defined_text = {
+defined_text = { # GetPositions
 	name = GetPositions
 	text = {
 		trigger = {
@@ -94,7 +157,7 @@ defined_text = {
 		localization_key = GetPositions_1
 	}
 }
-defined_text = {
+defined_text = { # GetPositions_list
 	name = GetPositions_list
 	text = {
 		trigger = {
@@ -122,7 +185,7 @@ defined_text = {
 		localization_key = GetPositions_list_2
 	}
 }
-defined_text = {
+defined_text = { # GetGoverningPartyName
 	name = GetGoverningPartyName
 	text = {
 		trigger = {
@@ -134,7 +197,7 @@ defined_text = {
 		localization_key = GetGoverningParty_1
 	}
 }
-defined_text = {
+defined_text = { # GetGoverningPartyNameLong
 	name = GetGoverningPartyNameLong
 	text = {
 		trigger = {
@@ -146,12 +209,12 @@ defined_text = {
 		localization_key = GetGoverningPartyLong_1
 	}
 }
-defined_text = {
+defined_text = { # GetGovernmentType
 	name = GetGovernmentType
 	text = {
 		trigger = {
 			has_country_flag = government_monarchy
-			check_variable = { position_method_@var:government_head_of_state = government_method_hereditary }
+			check_variable = { position_method_@var:government_head_of_state = token:government_method_hereditary }
 		}
 		localization_key = GetGovernmentType_0
 	}
@@ -163,5 +226,135 @@ defined_text = {
 	}
 	text = {
 		localization_key = GetGovernmentType_2
+	}
+}
+defined_text = { # GetChambersSeats
+	name = GetChambersSeats
+	text = {
+		trigger = {
+			set_temp_variable = { GetChambersSeats_idx = -1 }
+		}
+		localization_key = GetChambersSeats_0
+	}
+}
+defined_text = { # GetChambersSeats_list
+	name = GetChambersSeats_list
+	text = {
+		trigger = {
+			add_to_temp_variable = { GetChambersSeats_idx = 1 }
+			NOT = { check_variable = { GetChambersSeats_idx = government_chambers^num } }
+			set_temp_variable = { original_chamber = chamber_no }
+			set_temp_variable = { chamber_no = government_chambers^GetChambersSeats_idx }
+		}
+		localization_key = GetChambersSeats_list_0
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { chamber_no = original_chamber }
+		}
+		localization_key = GetChambersSeats_list_1
+	}
+}
+defined_text = { # GetChambers
+	name = GetChambers
+	text = {
+		trigger = {
+			set_temp_variable = { GetChambers_idx = -1 }
+		}
+		localization_key = GetChambers_0
+	}
+}
+defined_text = { # GetChambers_list
+	name = GetChambers_list
+	text = {
+		trigger = {
+			add_to_temp_variable = { GetChambers_idx = 1 }
+			NOT = { check_variable = { GetChambers_idx = government_chambers^num } }
+			set_temp_variable = { original_chamber = chamber_no }
+			set_temp_variable = { chamber_no = government_chambers^GetChambers_idx }
+		}
+		localization_key = GetChambers_list_0
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { chamber_no = original_chamber }
+		}
+		localization_key = GetChambers_list_1
+	}
+}
+defined_text = { # GetPartyIdeologies
+	name = GetPartyIdeologies
+	text = {
+		trigger = {
+			check_variable = { ideologies^num > 0 }
+			set_temp_variable = { GetPartyIdeologies_idx = -1 }
+		}
+		localization_key = GetPartyIdeologies_0
+	}
+	text = {
+		localization_key = GetPartyIdeologies_1
+	}
+}
+defined_text = { # GetPartyIdeologies_list
+	name = GetPartyIdeologies_list
+	text = {
+		trigger = {
+			add_to_temp_variable = { GetPartyIdeologies_idx = 1 }
+			NOT = { check_variable = { GetPartyIdeologies_idx = ideologies^num } }
+			set_temp_variable = { ideology_token = ideologies^GetPartyIdeologies_idx }
+			check_variable = { GetPartyIdeologies_idx = 0 }
+		}
+		localization_key = GetPartyIdeologies_list_0
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { GetPartyIdeologies_idx = ideologies^num } }
+		}
+		localization_key = GetPartyIdeologies_list_1
+	}
+	text = {
+		localization_key = GetPartyIdeologies_list_2
+	}
+}
+defined_text = { # GetCharAffiliations
+	name = GetCharAffiliations
+	text = {
+		trigger = {
+			char_has_party = yes
+			check_variable = { affiliations^num > 0 }
+			set_temp_variable = { GetCharAffiliations_idx = -1 }
+		}
+		localization_key = GetCharAffiliations_0
+	}
+	text = {
+		trigger = {
+			check_variable = { affiliations^num > 0 }
+			set_temp_variable = { GetCharAffiliations_idx = -1 }
+		}
+		localization_key = GetCharAffiliations_1
+	}
+	text = {
+		localization_key = GetCharAffiliations_2
+	}
+}
+defined_text = { # GetCharAffiliations_list
+	name = GetCharAffiliations_list
+	text = {
+		trigger = {
+			add_to_temp_variable = { GetCharAffiliations_idx = 1 }
+			NOT = { check_variable = { GetCharAffiliations_idx = affiliations^num } }
+			set_temp_variable = { affiliation_token = affiliations^GetCharAffiliations_idx }
+			check_variable = { GetCharAffiliations_idx = 0 }
+		}
+		localization_key = GetCharAffiliations_list_0
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { GetCharAffiliations_idx = affiliations^num } }
+		}
+		localization_key = GetCharAffiliations_list_1
+	}
+	text = {
+		localization_key = GetCharAffiliations_list_2
 	}
 }
